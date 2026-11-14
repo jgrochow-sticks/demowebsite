@@ -3,147 +3,106 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Photo Gallery</title>
+    <title>My Photo Galleries</title>
     <style>
-        /* Base Reset & Styling */
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
+        * { box-sizing: border-box; margin: 0; padding: 0; }
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
             background-color: #f4f4f9;
             color: #333;
             line-height: 1.6;
-            padding: 20px;
-        }
-
-        header {
+            padding: 40px 20px;
             text-align: center;
-            margin-bottom: 40px;
         }
+        header { margin-bottom: 50px; }
+        header h1 { font-size: 2.5rem; color: #111; margin-bottom: 10px; }
+        header p { color: #666; font-size: 1.1rem; }
 
-        header h1 {
-            font-size: 2.5rem;
-            color: #222;
-            margin-bottom: 10px;
-        }
-
-        header p {
-            color: #666;
-            font-size: 1.1rem;
-        }
-
-        /* Gallery Grid Layout */
-        .gallery-container {
-            max-width: 1200px;
+        .galleries-grid {
+            max-width: 900px;
             margin: 0 auto;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
         }
 
-        /* Gallery Item Card */
-        .gallery-item {
+        .gallery-card {
             background: #fff;
-            border-radius: 8px;
+            border-radius: 12px;
             overflow: hidden;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+            text-decoration: none;
+            color: inherit;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: block;
         }
 
-        .gallery-item:hover {
+        .gallery-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 12px 20px rgba(0, 0, 0, 0.1);
         }
 
-        .image-wrapper {
+        .card-image {
             width: 100%;
-            height: 220px;
+            height: 200px;
             overflow: hidden;
         }
 
-        .gallery-item img {
+        .card-image img {
             width: 100%;
             height: 100%;
             object-fit: cover;
             transition: transform 0.5s ease;
         }
 
-        .gallery-item:hover img {
+        .gallery-card:hover .card-image img {
             transform: scale(1.05);
         }
 
-        .image-info {
-            padding: 15px;
+        .card-content {
+            padding: 20px;
+            text-align: left;
         }
 
-        .image-info h3 {
-            font-size: 1.1rem;
-            margin-bottom: 5px;
-            color: #111;
-        }
+        .card-content h2 { font-size: 1.3rem; margin-bottom: 8px; color: #222; }
+        .card-content p { font-size: 0.95rem; color: #666; }
 
-        .image-info p {
-            font-size: 0.9rem;
-            color: #777;
-        }
-
-        /* Footer */
-        footer {
-            text-align: center;
-            margin-top: 50px;
-            color: #888;
-            font-size: 0.85rem;
-        }
+        footer { margin-top: 60px; color: #888; font-size: 0.85rem; }
     </style>
 </head>
 <body>
 
     <header>
-        <h1>My Photo Gallery</h1>
-        <p>A collection of moments captured in time.</p>
+        <h1>My Photo Galleries</h1>
+        <p>Select a collection to view all photos inside.</p>
     </header>
 
-    <main class="gallery-container">
-        <!-- Photo Item 1 -->
-        <div class="gallery-item">
-            <div class="image-wrapper">
-                <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb" alt="Mountain Landscape">
+    <main class="galleries-grid">
+        <!-- Gallery 1 Link Card -->
+        <a href="gallery1/index.html" class="gallery-card">
+            <div class="card-image">
+                <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb" alt="Gallery 1 Cover">
             </div>
-            <div class="image-info">
-                <h3>Mountain Peak</h3>
-                <p>Scenic view during sunset.</p>
+            <div class="card-content">
+                <h2>Gallery 1: Landscapes</h2>
+                <p>Explore breathtaking views of mountains, valleys, and horizons.</p>
             </div>
-        </div>
+        </a>
 
-        <!-- Photo Item 2 -->
-        <div class="gallery-item">
-            <div class="image-wrapper">
-                <img src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05" alt="Forest Pathway">
+        <!-- Gallery 2 Link Card -->
+        <a href="gallery2/index.html" class="gallery-card">
+            <div class="card-image">
+                <img src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05" alt="Gallery 2 Cover">
             </div>
-            <div class="image-info">
-                <h3>Misty Forest</h3>
-                <p>A quiet morning walk in the woods.</p>
+            <div class="card-content">
+                <h2>Gallery 2: Forests & Nature</h2>
+                <p>A quiet look into wooded paths and lush greenery.</p>
             </div>
-        </div>
-
-        <!-- Photo Item 3 -->
-        <div class="gallery-item">
-            <div class="image-wrapper">
-                <img src="https://images.unsplash.com/photo-1426604966848-d7adac902bff" alt="Valley view">
-            </div>
-            <div class="image-info">
-                <h3>Green Valley</h3>
-                <p>Lush greenery stretching out.</p>
-            </div>
-        </div>
+        </a>
     </main>
 
     <footer>
-        <p>&copy; 2026 My Photo Gallery. All rights reserved.</p>
+        <p>&copy; 2026 My Photo Galleries</p>
     </footer>
 
 </body>
