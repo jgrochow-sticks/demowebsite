@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Photo Gallery</title>
+    <style>
+        /* Base Reset & Styling */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            color: #222;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            color: #666;
+            font-size: 1.1rem;
+        }
+
+        /* Gallery Grid Layout */
+        .gallery-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        /* Gallery Item Card */
+        .gallery-item {
+            background: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .image-wrapper {
+            width: 100%;
+            height: 220px;
+            overflow: hidden;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+
+        .image-info {
+            padding: 15px;
+        }
+
+        .image-info h3 {
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+            color: #111;
+        }
+
+        .image-info p {
+            font-size: 0.9rem;
+            color: #777;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            color: #888;
+            font-size: 0.85rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>My Photo Gallery</h1>
+        <p>A collection of moments captured in time.</p>
+    </header>
+
+    <main class="gallery-container">
+        <!-- Photo Item 1 -->
+        <div class="gallery-item">
+            <div class="image-wrapper">
+                <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb" alt="Mountain Landscape">
+            </div>
+            <div class="image-info">
+                <h3>Mountain Peak</h3>
+                <p>Scenic view during sunset.</p>
+            </div>
+        </div>
+
+        <!-- Photo Item 2 -->
+        <div class="gallery-item">
+            <div class="image-wrapper">
+                <img src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05" alt="Forest Pathway">
+            </div>
+            <div class="image-info">
+                <h3>Misty Forest</h3>
+                <p>A quiet morning walk in the woods.</p>
+            </div>
+        </div>
+
+        <!-- Photo Item 3 -->
+        <div class="gallery-item">
+            <div class="image-wrapper">
+                <img src="https://images.unsplash.com/photo-1426604966848-d7adac902bff" alt="Valley view">
+            </div>
+            <div class="image-info">
+                <h3>Green Valley</h3>
+                <p>Lush greenery stretching out.</p>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 My Photo Gallery. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
